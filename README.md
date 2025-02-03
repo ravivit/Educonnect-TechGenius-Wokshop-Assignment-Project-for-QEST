@@ -1,5 +1,7 @@
 # EduConnect - TechGenius Workshop POS System
 Welcome to the **EduConnect TechGenius Assignment Project**! This is a **Point of Sale (POS) Interface** built using **React** for managing workshops and services offered by EduConnect TechGenius. The interface allows users to select services, manage a cart, simulate payments, and generate receipts.
+## Visit Educonnect Tech Genius
+For more information, visit site-> [EduConnect TechGenius](https://dastaan.store/aad).
 
 ![Homepage](SIGNUP.png)
 ![Homepage](IMAGE1.png)
