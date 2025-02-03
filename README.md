@@ -1,5 +1,5 @@
 # EduConnect - TechGenius Workshop POS System
-
+![Homepage](SIGNUP.png)
 ![Homepage](IMAGE1.png)
 
 ## Overview
@@ -25,7 +25,7 @@ EduConnect - TechGenius Workshop is a Point of Sale (POS) interface designed for
 Ensure you have the following installed:
 - Node.js (>= 16.0)
 - npm or yarn
-
+![Homepage](ANALYTICS.png)
 ### Installation Steps
 1. **Clone the repository**
    ```sh
@@ -54,7 +54,7 @@ Ensure you have the following installed:
 - No backend integration; all data is stored in memory/local storage.
 
 ## Screenshots
-[Upload your homepage screenshot here]
+![Homepage](COSTOMER.png) ![Homepage](login.png)
 ![Homepage](https://via.placeholder.com/1200x600.png?text=Homepage+Screenshot)
 
 ## Submission Requirements
