@@ -1,202 +1,71 @@
-<p align="center">
-  <img width="250" src="https://raw.githubusercontent.com/yargs/yargs/master/yargs-logo.png">
-</p>
-<h1 align="center"> Yargs </h1>
-<p align="center">
-  <b >Yargs be a node.js library fer hearties tryin' ter parse optstrings</b>
-</p>
+# EduConnect - TechGenius Workshop POS System
 
-<br>
+![Homepage](YOUR_IMAGE_URL_HERE)
 
-![ci](https://github.com/yargs/yargs/workflows/ci/badge.svg)
-[![NPM version][npm-image]][npm-url]
-[![js-standard-style][standard-image]][standard-url]
-[![Coverage][coverage-image]][coverage-url]
-[![Conventional Commits][conventional-commits-image]][conventional-commits-url]
-[![Slack][slack-image]][slack-url]
+## Overview
+EduConnect - TechGenius Workshop is a Point of Sale (POS) interface designed for selling services such as workshops, fitness classes, and therapy sessions. The platform provides an intuitive, responsive, and functional UI for users to select, manage, and purchase services.
 
-## Description
-Yargs helps you build interactive command line tools, by parsing arguments and generating an elegant user interface.
+## Features
+1. **Select Services**: Browse and choose from a list of available workshops and services.
+2. **Add to Cart**: Add services to a cart and view/edit cart details.
+3. **Customer Management**: Optionally add customer details (name, email, phone) during checkout.
+4. **Payments**: Simulated checkout and payment flow (mock payment integration).
+5. **Receipt Generation**: Display a receipt with transaction details upon successful checkout.
+6. **Responsiveness**: Designed to work smoothly on both web and mobile devices.
+7. **User-Friendly UI**: A clean and easy-to-navigate interface for seamless user experience.
 
-It gives you:
+## Tech Stack
+- **Frontend Framework**: React.js
+- **Styling**: Tailwind CSS / CSS
+- **State Management**: React Hooks / Redux (if applicable)
+- **Mock Data Storage**: JSON or Local Storage
 
-* commands and (grouped) options (`my-program.js serve --port=5000`).
-* a dynamically generated help menu based on your arguments:
+## Setup Instructions
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>= 16.0)
+- npm or yarn
 
-```
-mocha [spec..]
+### Installation Steps
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
+   cd YOUR_REPO_NAME
+   ```
+2. **Install dependencies**
+   ```sh
+   npm install  # or yarn install
+   ```
+3. **Run the development server**
+   ```sh
+   npm start  # or yarn start
+   ```
+4. **Access the application**
+   Open `http://localhost:3000/` in your browser.
 
-Run tests with Mocha
+## Assumptions
+- The payment system is mocked and does not include real transactions.
+- The customer management system stores data temporarily (not persisted in a database).
+- The cart system is based on frontend state and does not use a backend.
 
-Commands
-  mocha inspect [spec..]  Run tests with Mocha                         [default]
-  mocha init <path>       create a client-side Mocha setup at <path>
+## Limitations
+- No real-time updates (e.g., no WebSocket or API integration).
+- No authentication or user login system implemented.
+- No backend integration; all data is stored in memory/local storage.
 
-Rules & Behavior
-  --allow-uncaught           Allow uncaught errors to propagate        [boolean]
-  --async-only, -A           Require all tests to use a callback (async) or
-                             return a Promise                          [boolean]
-```
+## Screenshots
+[Upload your homepage screenshot here]
+![Homepage](https://via.placeholder.com/1200x600.png?text=Homepage+Screenshot)
 
-* bash-completion shortcuts for commands and options.
-* and [tons more](/docs/api.md).
+## Submission Requirements
+- [x] Public GitHub repository with source code.
+- [x] README with setup instructions, assumptions, and limitations.
+- [x] Screenshots showcasing the homepage and key features.
 
-## Installation
+## License
+This project is open-source and available under the [MIT License](LICENSE).
 
-Stable version:
-```bash
-npm i yargs
-```
+---
 
-Bleeding edge version with the most recent features:
-```bash
-npm i yargs@next
-```
+For any issues or contributions, feel free to open a pull request or contact me via GitHub.
 
-## Usage
-
-### Simple Example
-
-```javascript
-#!/usr/bin/env node
-const yargs = require('yargs/yargs')
-const { hideBin } = require('yargs/helpers')
-const argv = yargs(hideBin(process.argv)).argv
-
-if (argv.ships > 3 && argv.distance < 53.5) {
-  console.log('Plunder more riffiwobbles!')
-} else {
-  console.log('Retreat from the xupptumblers!')
-}
-```
-
-```bash
-$ ./plunder.js --ships=4 --distance=22
-Plunder more riffiwobbles!
-
-$ ./plunder.js --ships 12 --distance 98.7
-Retreat from the xupptumblers!
-```
-
-### Complex Example
-
-```javascript
-#!/usr/bin/env node
-const yargs = require('yargs/yargs')
-const { hideBin } = require('yargs/helpers')
-
-yargs(hideBin(process.argv))
-  .command('serve [port]', 'start the server', (yargs) => {
-    yargs
-      .positional('port', {
-        describe: 'port to bind on',
-        default: 5000
-      })
-  }, (argv) => {
-    if (argv.verbose) console.info(`start server on :${argv.port}`)
-    serve(argv.port)
-  })
-  .option('verbose', {
-    alias: 'v',
-    type: 'boolean',
-    description: 'Run with verbose logging'
-  })
-  .argv
-```
-
-Run the example above with `--help` to see the help for the application.
-
-## Supported Platforms
-
-### TypeScript
-
-yargs has type definitions at [@types/yargs][type-definitions].
-
-```
-npm i @types/yargs --save-dev
-```
-
-See usage examples in [docs](/docs/typescript.md).
-
-### Deno
-
-As of `v16`, `yargs` supports [Deno](https://github.com/denoland/deno):
-
-```typescript
-import yargs from 'https://deno.land/x/yargs/deno.ts'
-import { Arguments } from 'https://deno.land/x/yargs/deno-types.ts'
-
-yargs(Deno.args)
-  .command('download <files...>', 'download a list of files', (yargs: any) => {
-    return yargs.positional('files', {
-      describe: 'a list of files to do something with'
-    })
-  }, (argv: Arguments) => {
-    console.info(argv)
-  })
-  .strictCommands()
-  .demandCommand(1)
-  .argv
-```
-
-### ESM
-
-As of `v16`,`yargs` supports ESM imports:
-
-```js
-import yargs from 'yargs'
-import { hideBin } from 'yargs/helpers'
-
-yargs(hideBin(process.argv))
-  .command('curl <url>', 'fetch the contents of the URL', () => {}, (argv) => {
-    console.info(argv)
-  })
-  .demandCommand(1)
-  .argv
-```
-
-### Usage in Browser
-
-See examples of using yargs in the browser in [docs](/docs/browser.md).
-
-## Community
-
-Having problems? want to contribute? join our [community slack](http://devtoolscommunity.herokuapp.com).
-
-## Documentation
-
-### Table of Contents
-
-* [Yargs' API](/docs/api.md)
-* [Examples](/docs/examples.md)
-* [Parsing Tricks](/docs/tricks.md)
-  * [Stop the Parser](/docs/tricks.md#stop)
-  * [Negating Boolean Arguments](/docs/tricks.md#negate)
-  * [Numbers](/docs/tricks.md#numbers)
-  * [Arrays](/docs/tricks.md#arrays)
-  * [Objects](/docs/tricks.md#objects)
-  * [Quotes](/docs/tricks.md#quotes)
-* [Advanced Topics](/docs/advanced.md)
-  * [Composing Your App Using Commands](/docs/advanced.md#commands)
-  * [Building Configurable CLI Apps](/docs/advanced.md#configuration)
-  * [Customizing Yargs' Parser](/docs/advanced.md#customizing)
-  * [Bundling yargs](/docs/bundling.md)
-* [Contributing](/contributing.md)
-
-## Supported Node.js Versions
-
-Libraries in this ecosystem make a best effort to track
-[Node.js' release schedule](https://nodejs.org/en/about/releases/). Here's [a
-post on why we think this is important](https://medium.com/the-node-js-collection/maintainers-should-consider-following-node-js-release-schedule-ab08ed4de71a).
-
-[npm-url]: https://www.npmjs.com/package/yargs
-[npm-image]: https://img.shields.io/npm/v/yargs.svg
-[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-[standard-url]: http://standardjs.com/
-[conventional-commits-image]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg
-[conventional-commits-url]: https://conventionalcommits.org/
-[slack-image]: http://devtoolscommunity.herokuapp.com/badge.svg
-[slack-url]: http://devtoolscommunity.herokuapp.com
-[type-definitions]: https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/yargs
-[coverage-image]: https://img.shields.io/nycrc/yargs/yargs
-[coverage-url]: https://github.com/yargs/yargs/blob/master/.nycrc
