@@ -1,6 +1,6 @@
 # EduConnect - TechGenius Workshop POS System
 
-![Homepage](YOUR_IMAGE_URL_HERE)
+![Homepage](IMAGE1.png)
 
 ## Overview
 EduConnect - TechGenius Workshop is a Point of Sale (POS) interface designed for selling services such as workshops, fitness classes, and therapy sessions. The platform provides an intuitive, responsive, and functional UI for users to select, manage, and purchase services.
@@ -13,7 +13,7 @@ EduConnect - TechGenius Workshop is a Point of Sale (POS) interface designed for
 5. **Receipt Generation**: Display a receipt with transaction details upon successful checkout.
 6. **Responsiveness**: Designed to work smoothly on both web and mobile devices.
 7. **User-Friendly UI**: A clean and easy-to-navigate interface for seamless user experience.
-
+![Homepage](BILL.png)  CART.png
 ## Tech Stack
 - **Frontend Framework**: React.js
 - **Styling**: Tailwind CSS / CSS
